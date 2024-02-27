@@ -1,0 +1,16 @@
+---
+import {PROYECTS} from "./MockProyects"
+import ProyectCard from "./ProyectCard.astro"
+import CodeIcon from "../Icons/Code.astro"
+---
+
+<h1 class=" text-3xl font-semibold flex  flex-rows gap-x-4 pb-2">
+    Proyectos <CodeIcon class="size-8 items-center"/>
+ </h1>
+<section>
+    {
+        PROYECTS.map((proyect, index) => (
+            <ProyectCard {...proyect} index ={index}/>
+        ))
+    }
+</section>

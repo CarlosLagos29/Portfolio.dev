@@ -1,0 +1,49 @@
+---
+import CalendarSVG from "./CalendarSVG.astro";
+import Badge from "../Reutilizables/Badge.astro";
+type Props = import("./Experiencia").Props;
+
+const { title, date, description,tech, metod, index } = Astro.props;
+---
+
+<article class="gap-y-12">
+    <CalendarSVG />
+    <div class="ml-2">
+        <h3
+            class="flex items-center mb-1 text-lg font-semibold text-white gap-3"
+        >
+            {title}
+            {index === 0 ? <Badge>Latest</Badge> : ""}
+        </h3>
+        <time class="block my-2 text-sm font-normal leading-none text-white opacity-80">
+            {date}
+        </time>
+        <p class="mb-4 text-base font-normal text-white">
+            {description}
+        </p>
+        {
+            tech && (<ul class=" flex gap-2 ">
+                Utilice tecnologias como: {
+                    tech.map((t: string) => 
+                    (
+                    <li class=" bg-slate-50 rounded-full text-black px-2">
+                        {t}
+                    </li>
+                    ))
+                }
+                </ul>)
+        }
+        {
+            metod && (<ul class=" flex gap-2 mt-2 ">
+                Trabaje con Metodologias como: {
+                    metod.map((m: string )=>(
+                    <li class=" bg-slate-50 rounded-full text-black px-2">
+                        {m}
+                    </li>
+                    ))
+                } 
+                </ul>
+            )
+        }
+    </div>
+</article>

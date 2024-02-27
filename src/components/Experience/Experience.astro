@@ -1,0 +1,19 @@
+---
+import EXPERIENCIA from "./Experiencia";
+import Item from "./Item.astro";
+import BriefIcon from "../Icons/Briefcase.astro"
+---
+
+
+<h1 class=" text-3xl font-semibold flex flex-rows gap-x-4 pb-10"> 
+    Experiencia Laboral <BriefIcon class="size-8 items-center"/> 
+</h1>
+<ol class=" relative border-s border-gray-200 dark:border-gray-700 ml-3">
+    {
+        EXPERIENCIA.map((exp, index) => (
+            <li class="mb-10 ms-6 text-pretty">
+                <Item {...exp} index={index} />
+            </li>
+        ))
+    }
+</ol>

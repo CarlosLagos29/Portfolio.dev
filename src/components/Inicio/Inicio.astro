@@ -1,0 +1,45 @@
+---
+import Badge from "../Reutilizables/Badge.astro";
+import GithubIcon from "../Icons/Github.astro"
+import LinkedinIcon from "../Icons/LinkedIn.astro"
+import GmailIcon from "../Icons/Gmail.astro"
+---
+
+<img src= '../../Photos/perfil.jpg' class=" float-right rounded-full size-20" alt="Fotp de perfil">
+<h1 class="sm:text-2xl lg:text-5xl font-bold flex  flex-rows gap-x-4 pb-4">Hola! soy Carlos 
+    <a href="https://www.linkedin.com/in/carlos-lagos-9b8030288/" class="flex justify-center items-center ">
+        <Badge>Disponibe para trabajar</Badge></h1>
+    </a>
+<h2 class=" sm:text-lg lg:text-xl text-pretty">
+    <span class=" text-blue-300">Buenos</span> Aires, <span class=" text-blue-300">Argentina</span> 🧉. <span class="text-yellow-300">Desarrollador Full Stack 💻</span>
+    <br>
+    Especializado tanto en Front-end como Back-end. Conocimientos en metodologías ágiles, GIT, estructura de datos, algoritmos, frameworks CSS, entre otros.
+    <br> 
+    Me destaco por mi habilidad para trabajar eficientemente en equipo, resolver conflictos de manera ágil y adaptarme rápidamente a nuevos entornos. 
+    Disfruto aplicando mis conocimientos y siempre estoy ansioso por aprender más para mejorar constantemente en el fascinante mundo de la tecnología.
+    <br>
+    Con enfoque lógico, facilidad de adaptación, comunicación, resolución de problemas y buen  trabajo en equipo . 
+</h2>
+<nav>
+<ul class=" flex gap-x-6 items-center mt-4">
+    <li>
+        <a href="https://github.com/CarlosLagos29" target="_blank" class= "rounded-full border border-white flex justify-center items-center p-2 gap-x-1 hover:bg-white hover:text-black transition duration-500">
+            <GithubIcon class="size-6"/>
+            Github
+        </a>
+
+    </li>
+    <li>
+        <a href="https://www.linkedin.com/in/carlos-lagos-9b8030288/" target="_blank" class= "rounded-full border border-white flex justify-center items-center p-2 gap-x-1 hover:bg-white hover:text-black transition duration-500">
+            <LinkedinIcon class=" size-6"  />
+            Linkedin
+        </a>
+    </li>				
+    <li>
+        <a href="mailto:lagosc252@gmail.com" class= "rounded-full border border-white flex justify-center items-center p-2 gap-x-1  hover:bg-white hover:text-black transition duration-500">
+            <GmailIcon class=" size-6"/>
+            Gmail
+        </a>
+    </li>				
+</ul>
+</nav>
