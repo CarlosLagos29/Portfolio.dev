@@ -1,6 +1,7 @@
 ---
 import Badge from "../Reutilizables/Badge.astro";
 import GithubIcon from "../Icons/Github.astro";
+import ChromeIcon from "../Icons/Chrome.astro";
 
 type Props = import("./MockProyects").ProyectsInterface;
 
@@ -17,14 +18,12 @@ const {
     index,
 } = Astro.props;
 
-
 //"flex flex-row-reverse gap-3 my-3"
 
-const par = index % 2 !== 0? "flex-row-reverse": "flex-row"
-
+const par = index % 2 
 ---
 
-<section class="  rounded-2xl border border-white border-solid border-5 p-5 my-4 ">
+<section class="rounded-2xl border border-white border-solid border-5 p-5 my-4">
     <h2 class="flex justify-end">{date}</h2>
     <h1
         class="flex items-center mb-1 text-2xl font-semibold text-white dark:text-white gap-3"
@@ -32,15 +31,17 @@ const par = index % 2 !== 0? "flex-row-reverse": "flex-row"
         {title}
         {index === 0 ? <Badge>Latest</Badge> : ""}
     </h1>
-    <h2 class=" text-yellow-200" >
+    <h2 class="text-yellow-200">
         {subtitle}
     </h2>
-    <div class= `flex flex-col xl:flex-row gap-3 my-3`>
-        <img
-            class="rounded-xl max-h-96 max-w-96 items-center"
-            src= {img}
-            alt="Proyect image"
-        />
+    <div class=`flex flex-col ${par !== 0? "xl:flex-row-reverse": "xl:flex-row"} gap-3 my-3`>
+        <div class=" flex justify-center items-center"> 
+            <img
+                class="rounded-xl max-h-96 max-w-96 items-center"
+                src={img}
+                alt="Proyect image"
+            />
+        </div>
         <article>
             <p class="text-pretty mb-2">{description}</p>
             <nav>
@@ -48,22 +49,31 @@ const par = index % 2 !== 0? "flex-row-reverse": "flex-row"
             </nav>
         </article>
     </div>
-        <ul class="flex justify-center gap-2 mt-2">
-            {
-                front.map((t: string) => (
-                    <li class=" bg-slate-50 rounded-full text-black px-2">
-                        {t}
-                    </li>
-                ))
-            }
-        </ul>
-        <a
-            href={repo}
-            target="_blank"
-            class="rounded-full border border-white flex justify-center items-center p-2 gap-x-1 hover:bg-white hover:text-black transition duration-500 mt-3"
-        >
-            <GithubIcon class="size-6" />
-            Repositorio
-        </a>
-    </div>
+    <ul class="flex justify-center gap-2 mt-2">
+        {
+            front.map((t: string) => (
+                <li class=" bg-slate-50 rounded-full text-black px-2">{t}</li>
+            ))
+        }
+    </ul>
+    <a
+        href={repo}
+        target="_blank"
+        class="rounded-full border border-white flex justify-center items-center p-2 gap-x-2 hover:bg-white hover:text-black transition duration-500 mt-3"
+    >
+        <GithubIcon class="size-6" />
+        Repositorio
+    </a>
+    {
+        link && (
+            <a
+                href={link}
+                target="_blank"
+                class="rounded-full border border-white flex justify-center items-center p-2 gap-x-2 hover:bg-white hover:text-black transition duration-500 mt-3"
+            >
+                <ChromeIcon class="size-6" />
+                Deploy
+            </a>
+        )
+    }
 </section>
